@@ -57,8 +57,8 @@ export const getDb = async () => {
     const store = tx.objectStore('jate');
     const request = store.getAll();
     const result = await request;
-    console.log(result);
-    return result;
+    console.log(result[0]?.jate);
+    return result[0]?.jate;
   } catch (error) {
     console.error('Failed to get content from the database:', error);
     throw error;
